@@ -1,0 +1,771 @@
+/*GENERALES*/
+* {
+    margin: 0; /* Elimina el margen predeterminado para todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado para todos los elementos */
+}
+
+body {
+    font-family: "Jost", Sans-serif; /* Establece la fuente principal para el cuerpo del documento */
+    background-color: #000000; /* Establece el color de fondo del cuerpo del documento */
+}
+
+h1, h2 {
+    color: #FFFFFF; /* Establece el color del texto para los encabezados h1 y h2 */
+    font-size: 3em; /* Establece el tamaño de fuente para los encabezados h1 y h2 */
+    font-weight: 600; /* Establece el grosor de la fuente para los encabezados h1 y h2 */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-style: normal; /* Establece el estilo de la fuente como normal */
+    line-height: 1.5em; /* Establece la altura de línea para los encabezados h1 y h2 */
+    letter-spacing: 0.8px; /* Establece el espaciado entre letras para los encabezados h1 y h2 */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); /* Agrega una sombra de texto con opacidad */
+}
+
+h3 {
+    color: #FFFFFF; /* Establece el color del texto para los encabezados h3 */
+    font-family: Sans-serif; /* Establece la fuente para los encabezados h3 */
+    font-size: 1.2em;
+    font-weight: 400; /* Establece el grosor de la fuente para los encabezados h3 */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); /* Agrega una sombra de texto con opacidad */
+}
+
+p {
+    color: #bfbfbf; /* Establece el color del texto para los párrafos */
+    font-family: "Jost", Sans-serif; /* Establece la fuente para los párrafos */
+    font-size: 1.2em; /* Establece el tamaño de fuente para los párrafos */
+    font-weight: 400; /* Establece el grosor de la fuente para los párrafos */
+    line-height: 2em; /* Establece la altura de línea para los párrafos */
+    padding: 0 0 20px 0; /* Establece el relleno para los párrafos */
+}
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    h1{
+        font-size: 2.5em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    h2 {
+        font-size: 1.7em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    h3 {
+        font-size: 1em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    p {
+        font-size: 1em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    h1{
+        font-size: 2em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    h2 {
+        font-size: 1.5em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    h3 {
+        font-size: 0.8em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+    p {
+        font-size: 0.8em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+}
+
+
+
+button {
+    padding: 10px 10px; /* Establece el espacio entre el texto y el borde del botón */
+    background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); /* Establece un fondo degradado en el botón */
+    color: white; /* Establece el color del texto del botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    background-size: 150% auto; /* Establece el tamaño del fondo degradado del botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 4px; /* Establece la curvatura de las esquinas del botón */
+    min-width: 100px; /* establece un minimo para que no se vean muy pequeños */
+}
+
+button:hover {
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar interactividad */
+}
+
+
+
+
+
+
+
+
+header {
+    background-color: #0a0a0a; /* Color de fondo del header */
+}
+
+nav {
+    display: flex; /* Ajustado para centrar los elementos horizontalmente */
+    align-items: center;
+    padding: 10px 30px; /* Ajustado el padding para mejorar la apariencia */
+}
+
+.logo a img {
+    height: 85px;
+    transition: transform 0.3s; /* Agregamos una transición de transformación para el efecto de crecimiento al poner el cursor encima */
+    margin-right: 30px;
+}
+
+.logo a img:hover {
+    transform: scale(1.1); /* Hace que la imagen se agrande un 10% al hacer poner el cursor encima */
+}
+
+.navi_button {
+    width: 30%; /* Ajustado el ancho */
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    font-size: 0.8em;
+    width: 100%; /* Ajustado el ancho */
+}
+
+
+
+
+nav div:nth-child(3) {
+    text-align: center; /* Centra el botón horizontalmente */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+.menu li {
+    margin-left: 50px; /* Espacio entre elementos del menú */
+    text-transform: uppercase;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s; /* Agregamos una transición de color al hacer hover */
+}
+
+.menu a:hover {
+    color: #FFC29A; /* Cambia el color al hacer hover */
+    /* Puedes agregar otros estilos de hover si lo deseas, como cambiar el fondo, etc. */
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    header button {
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width: 767px) {
+    header button {
+        font-size: 0.7em;
+    }
+}
+
+
+
+
+
+/* Estilos para la seccion 1 */
+
+#section_uno {
+    height: 70vh; /* Establece la altura al 70% de la altura visible del viewport para #container_uno */
+    background-image: url(/img/head51.jpg); /* Establece la imagen de fondo para #container_uno */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo en #container_uno */
+    background-size: auto 100%; /* Ajusta el tamaño de la imagen de fondo según la preferencia en #container_uno */
+    background-position: center left; /* Establece la posición de la imagen de fondo en #container_uno */
+    display: flex; /* Establece el modelo de caja flexible para #container_uno */
+    justify-content: flex-end; /* Alinea los elementos al final del eje principal en #container_uno */
+    align-items: center; /* Centra verticalmente los elementos en #container_uno */
+    overflow: hidden; /* Oculta el exceso de contenido que desborda el contenedor en #container_uno */
+}
+
+#section_uno div {
+    height: 100%; /* Establece la altura al 100% para #container_uno div */
+    width: 40vw; /* Establece el ancho al 40% del ancho visible del viewport para #container_uno div */
+    display: flex; /* Establece el modelo de caja flexible para #container_uno div */
+    flex-direction: column; /* Establece la dirección del diseño como columna para #container_uno div */
+    justify-content: center; /* Centra verticalmente los elementos dentro de #container_uno div */
+    padding-right: 100px; /* Establece el relleno en el lado derecho de 100px para #container_uno div */
+    background: linear-gradient(to left, black 80%, rgba(0, 0, 0, 0.1)); /* Establece un fondo degradado en #container_uno div */
+    padding: 0 150px; /* Establece el relleno de 0 en la parte superior e inferior y de 150px en los lados para #container_uno div */
+}
+
+#section_uno button {
+    width: 25%; /* Establece el ancho al 25% para el botón dentro de #container_uno */
+}
+
+
+/* Estilos tablet y móvil para la section1*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #section_uno {
+        height: 70vh; /* Establece la altura al 70% de la altura visible del viewport para #container_uno */
+        justify-content: flex-start; /* Alinea los elementos al final del eje principal en #container_uno */
+        align-items: center; /* Centra verticalmente los elementos en #container_uno */
+    }
+    
+    #section_uno div {
+        background: none; /* Establece un fondo degradado en #container_uno div */
+        padding-left: 50px;
+        width: 50%; /* Establece el ancho al 25% para el botón dentro de #container_uno */
+
+    }
+    
+    #section_uno div button {
+        width: 50%; /* Establece el ancho al 25% para el botón dentro de #container_uno */
+    }
+}
+
+@media screen and (max-width: 767px){
+    #section_uno {
+        height: 60vh; /* Establece la altura al 70% de la altura visible del viewport para #container_uno */
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo según la preferencia en #container_uno */
+        justify-content: center; /* Alinea los elementos al final del eje principal en #container_uno */
+        text-align: center;
+    }
+    
+    #section_uno div {
+        background: none; /* Establece un fondo degradado en #container_uno div */
+        width: 100%; /* Establece el ancho al 25% para el botón dentro de #container_uno */
+        padding: 50px;
+
+    }
+    #section_uno div button {
+        width: 100%; /* Establece el ancho al 25% para el botón dentro de #container_uno */
+    }
+    
+}
+
+
+
+
+
+
+
+/* Estilos para la seccion 2*/
+
+#section_dos {
+    padding: 100px 50px;
+    display: flex; /* Establece el modelo de caja flexible para #container_dos */
+    justify-content: center; /* Centra horizontalmente los elementos dentro de #container_dos */
+    align-items: center; /* Centra verticalmente los elementos dentro de #container_dos */
+    text-align: center; /* Centra horizontalmente el texto dentro de #container_dos */
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para la seccion 3*/
+#section_tres {
+    background-image: url(/img/container3.png); /* Establece la imagen de fondo para #container_tres */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: auto calc(70%);  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
+    background-position: right; /* Alinea la imagen de fondo a la derecha */
+    background-attachment: fixed; /* Fija la imagen de fondo en su posición mientras se desplaza la página */
+    display: flex; /* Establece el modelo de caja flexible para #container_tres */
+    flex-direction: column; /* Establece la dirección del diseño como columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro de #container_tres */
+    z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
+    padding: 150px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+}
+
+#section_tres div {
+    width: 50%; /* Establece el ancho de los elementos dentro de #container_tres al 50% */
+}
+
+
+
+/* Estilos para tablet y móvil */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #section_tres {
+        background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
+        z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
+        padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    }
+
+    #section_tres div {
+        padding: 20px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #section_tres {
+        background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
+        z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
+        padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    }
+
+    #section_tres div {
+        width: 60%; /* Establece el ancho de los elementos dentro de #container_tres al 50% */
+        padding: 20px; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+
+
+
+/* Estilos para la seccion 4 */
+#section_cuatro {
+    z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
+    padding: 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    text-align: center;
+}
+
+.portfolio {
+    display: flex; /* Establece el modelo de caja flexible para .web-designs */
+    flex-direction: row;
+    flex-wrap: wrap; /* Añade flex-wrap: wrap para que las imágenes se envuelvan en dispositivos más pequeños */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center;
+    padding: 100px 0; /* Establece un margen superior e inferior de 50px para .web-designs */
+}
+
+.portfolio a:nth-child(){
+    padding: 10px;
+    width: 100%;
+}
+
+/* Estilos para tablet y móvil */
+@media screen and (max-width: 767px) {
+    .portfolio a img {
+        height: 250px;
+        padding: 10px 20px;
+        overflow: hidden;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la sección 5 */
+#section_cinco {
+    background-image: url(/img/cuadrado\ clinicwebs.png); /* Establece la imagen de fondo para #container_cinco */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: auto calc(70%); /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
+    background-position: left; /* Alinea la imagen de fondo a la izquierda */
+    background-attachment: fixed; /* Fija la imagen de fondo en su posición mientras se desplaza la página */
+    display: flex; /* Establece el modelo de caja flexible para #container_cinco */
+    flex-direction: column; /* Establece la dirección del diseño como columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro de #container_cinco */
+    align-items: flex-end; /* Alinea los elementos hacia la derecha dentro de #container_cinco */
+    padding: 150px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+}
+
+#section_cinco div {
+    width: 50%; /* Establece el ancho de los elementos dentro de #container_cinco al 50% */
+}
+
+
+
+/* Estilos para tablet y móvil */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #section_cinco {
+        background-size: 300px;
+        padding: 100px 20px; /* Ajusta el padding para dispositivos más pequeños */
+    }
+
+    #section_cinco div {
+        width: 60%; /* Hace que el ancho sea del 100% en dispositivos más pequeños */
+        margin-bottom: 20px; /* Establece un espacio inferior de 20px entre los bloques en dispositivos más pequeños */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #section_cinco {
+        background-size: 150px;
+        padding: 20px; /* Ajusta el padding para dispositivos más pequeños */
+    }
+
+    #section_cinco div {
+        width: 60%; /* Hace que el ancho sea del 100% en dispositivos más pequeños */
+        padding: 20px; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+
+
+
+/* Estilos para la seccion de contacto en versión de escritorio */
+
+#section_seis {
+    background-image: url(/img/contacto-clinicwebs.jpg); /* Establece la imagen de fondo para #container_seis */
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir completamente el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-position: center center; /* Centra la imagen de fondo tanto horizontal como verticalmente */
+}
+
+.bg-transblack {
+    height: 100%; /* Establece la altura al 100% del contenedor padre */
+    background-color: rgba(0, 0, 0, 0.4); /* Establece un color de fondo negro con una opacidad del 30% mediante rgba */
+    display: flex; /* Establece el modelo de caja flexible para el contenedor .bg-transblack */
+    flex-direction: column; /* Establece la dirección del diseño como columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro de .bg-transblack */
+    text-align: center; /* Centra horizontalmente el texto dentro de .bg-transblack */
+    padding: 50px 0;
+}
+
+
+.mail{
+    display: flex; /* Establece los elementos .mail, .schedule, .telephone como elementos flexibles */
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente los elementos dentro de .mail, .schedule, .telephone */
+    align-items: center; /* Centra verticalmente los elementos dentro de .mail, .schedule, .telephone */
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+.mail a{
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+.telephone div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.telephone p{
+    padding: 0;
+}
+
+.mail img,
+.telephone img{
+    height: 30px; /* Establece la altura de las imágenes dentro de .mail y .telephone */
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el formulario de contacto */
+
+#section_siete {
+    display: flex; /* Establece el modelo de caja flexible para #section_ocho */
+    flex-direction: column; /* Establece la dirección del diseño como columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro de #section_ocho */
+    align-items: center; /* Centra horizontalmente los elementos dentro de #section_ocho */
+    text-align: center; /* Centra horizontalmente el texto dentro de #section_ocho */
+    padding: 100px 0 100px 0; /* Agrega un relleno de 100px en la parte inferior y 0 en la parte inferior y los lados*/
+}
+
+
+form input, textarea{
+    padding: 10px calc(100vw / 10);
+    border: none; /* Establece un borde de 1px sólido con color #333 para los campos de entrada, select y textarea */
+    border-radius: 5px; /* Establece la curvatura de las esquinas para los campos de entrada, select y textarea */
+} 
+
+form {
+    display: flex; /* Establece el modelo de caja flexible para .form */
+    flex-direction: column; /* Establece la dirección del diseño como columna para .form */
+    justify-content: center; /* Centra verticalmente los elementos dentro de .form */
+    align-items: center; /* Centra horizontalmente los elementos dentro de .form */
+}
+
+form label {
+    padding: 20px 0 10px 0; /* Establece un margen superior e inferior de 5px y sin margen en los lados para las etiquetas del formulario */
+    color: white; /* Establece el color del texto para las etiquetas del formulario */
+}
+
+
+
+form input[type="submit"] {
+    margin: 20px auto; /* Establece un margen de 20px arriba y abajo y automáticamente a los lados para los botones de tipo "button" en el formulario */
+    padding: 10px 40px;  /* Establece el espacio entre el texto y el borde del botón */
+    background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); /* Establece un fondo degradado para los botones de tipo "button" en el formulario */
+    color: #f4f4f4; /* Establece el color del texto para los botones de tipo "button" en el formulario */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas para los botones de tipo "button" en el formulario */
+    background-size: 150% auto; /* Establece el tamaño del fondo degradado para los botones de tipo "button" en el formulario */
+    border: none; /* Elimina el borde para los botones de tipo "button" en el formulario */
+    border-radius: 4px; /* Establece la curvatura de las esquinas para los botones de tipo "button" en el formulario */
+}
+
+
+
+   /* padding: 10px 10px;  Establece el espacio entre el texto y el borde del botón */
+   /* background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); Establece un fondo degradado en el botón */
+   /* color: white;  Establece el color del texto del botón */
+   /* text-align: center;  Centra el texto dentro del botón */
+   /* text-transform: uppercase;  Convierte el texto a mayúsculas */
+   /* background-size: 150% auto;  Establece el tamaño del fondo degradado del botón */
+   /* border: none;  Elimina el borde del botón */
+   /* border-radius: 4px; Establece la curvatura de las esquinas del botón */
+
+
+
+form input[type="submit"]:hover {
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones de tipo "button" en el formulario para indicar interactividad */
+}
+
+
+
+
+
+
+/* Estilos para el pie de página */
+
+
+
+footer div:first-child{
+    display: flex; /* Establece el modelo de caja flexible para el pie de página */
+    flex-direction: row;
+    justify-content: space-evenly; /* Centra verticalmente los elementos dentro del pie de página */
+    align-items: center; /* Centra horizontalmente los elementos dentro del pie de página */
+    flex-wrap: wrap;
+    padding: 10px 10px;
+}
+
+
+
+footer div div:first-child img{
+    height: 120px;
+    padding: 10px 10px;
+}
+
+
+footer div div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div div:nth-child(2) img{
+    height: 50px;
+}
+
+footer div div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f4f4f4;
+}
+
+footer input{
+    margin: 10px 0;
+    padding: 10px;
+}
+
+footer input[type="email"] {
+    border: none;
+    border-radius: 10px 0 0 10px ;
+}
+footer input[type="submit"] {
+    padding: 10px;
+    background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); /* Establece un fondo degradado para los botones de tipo "button" en el formulario */
+    color: #f4f4f4; /* Establece el color del texto para los botones de tipo "button" en el formulario */
+    background-size: 150% auto; /* Establece el tamaño del fondo degradado para los botones de tipo "button" en el formulario */
+    border: none; /* Elimina el borde para los botones de tipo "button" en el formulario */
+    border-radius: 0 4px 4px 0;
+    text-transform: uppercase;
+}
+
+footer div p{
+    font-size: 0.8em;
+    padding-bottom: 0;
+}
+
+.copyright{
+    background-color: #0e0e0e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+/*TABLA DE RUPTURAS*/
+/* Estilos para dispositivos pequeños (móviles) en modo vertical
+@media only screen and (max-width: 767px) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos para dispositivos pequeños (móviles) en modo horizontal
+  @media only screen and (min-width: 768px) and (max-width: 991px) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos para tabletas en modo vertical y horizontal
+  @media only screen and (min-width: 768px) and (max-width: 991px) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos para dispositivos grandes (computadoras) en modo horizontal 
+  @media only screen and (min-width: 992px) and (orientation: landscape) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos para dispositivos grandes (computadoras) en modo vertical 
+  @media only screen and (min-width: 992px) and (orientation: portrait) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos generales para todos los dispositivos y tamaños
+  @media only screen and (min-width: 768px) {*/
+    /* Tus estilos aquí
+  }*/
+  
+  /* Estilos para dispositivos grandes (computadoras) en modo horizontal 
+  @media only screen and (min-width: 1200px) {*/
+    /* Tus estilos aquí
+  
+}*/
+
+
+
+
+
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (max-width: 1300px) {
+    form input[type="button"] {
+        font-size: 0.68em;
+    }
+}
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (max-width: 1400px) {
+    .menu {
+        font-size: 0.7em;
+    }
+}
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (max-width: 1400px) {
+    .menu {
+        font-size: 0.6em;
+    }
+}
+
+
+/* Ajustes para tablet y móvil */
+@media screen and (max-width: 1100px) {
+    .menu {
+        display: none; /* Ocultamos el menú por defecto en versiones móviles y tabletas */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostramos el botón de hamburguesa */
+        margin-left: auto; /* Mueve el botón de hamburguesa hacia la derecha */
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu_button {
+        width: 100%; /* Ajustado el ancho para centrar en dispositivos móviles y tabletas */
+        text-align: center; /* Centra el botón horizontalmente */
+        order: 2; /* Cambia el orden del botón de inicio */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px), (max-width: 991px) {
+    #section_siete {
+        flex-direction: column; /* Cambia la dirección del diseño a columna en dispositivos con ancho de pantalla menor a 767px o 1024px */
+        align-items: center; /* Centra verticalmente los elementos dentro del contenedor en dispositivos móviles y tabletas */
+        padding: 100px 20px; /* Agrega un relleno de 20px alrededor del contenido del contenedor en dispositivos móviles y tabletas */
+    }
+
+    .mail{
+        display: flex; /* Establece .mail como un elemento flexible en dispositivos móviles y tabletas */
+        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
+        align-items: center; /* Centra horizontalmente los elementos dentro de .mail en dispositivos móviles y tabletas */
+    }
+
+    .mail img {
+        margin: 0; /* Elimina el margen derecho para el icono de mail en dispositivos móviles y tabletas */
+        margin-bottom: 10px; /* Establece un espaciado inferior de 10px entre el icono de mail y el texto en dispositivos móviles y tabletas */
+    }
+
+    .telephone{
+        display: flex; /* Establece .telephone como un elemento flexible en dispositivos móviles y tabletas */
+        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
+        align-items: center; /* Centra horizontalmente los elementos dentro de .telephone en dispositivos móviles y tabletas */
+    }
+
+    .telephone img {
+        margin-top: 10px; /* Establece un margen superior de 10px para las imágenes dentro de .telephone en dispositivos móviles y tabletas */
+    }
+
+    .icon_dos{
+        display: flex; /* Establece .icon_dos como un elemento flexible en dispositivos móviles y tabletas */
+    }
+}
+
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (max-width: 767px) {
+    #section_ocho {
+        padding: 0 0 20px 0; /* Reduzco más el relleno inferior para dispositivos más pequeños */
+    }
+
+    #section_ocho img {
+        margin-bottom: 10px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
+
+}
