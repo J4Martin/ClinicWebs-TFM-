@@ -65,7 +65,7 @@ p {
         margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
     h2 {
-        font-size: 1.5em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        font-size: 1.2em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
         margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
     h3 {
@@ -73,7 +73,7 @@ p {
         margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
     p {
-        font-size: 0.8em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
+        font-size: 0.6em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
         margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
 }
@@ -384,7 +384,7 @@ nav div:nth-child(3) {
 /* Estilos para tablet y móvil */
 @media screen and (max-width: 767px) {
     .portfolio a img {
-        height: 250px;
+        height: 200px;
         padding: 10px 20px;
         overflow: hidden;
     }
