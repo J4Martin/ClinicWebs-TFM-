@@ -23,7 +23,6 @@ h1, h2 {
 
 h3 {
     color: #FFFFFF; /* Establece el color del texto para los encabezados h3 */
-    font-family: Sans-serif; /* Establece la fuente para los encabezados h3 */
     font-size: 1.2em;
     font-weight: 400; /* Establece el grosor de la fuente para los encabezados h3 */
     text-transform: uppercase; /* Convierte el texto a mayúsculas */
@@ -61,28 +60,28 @@ p {
 
 
 @media screen and (max-width: 767px) {
+    h1 h2, h3 {
+        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
+    }
     h1{
         font-size: 2em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
-        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
     h2 {
         font-size: 1.2em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
-        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
+    
     h3 {
         font-size: 0.8em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
-        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
     p {
         font-size: 0.6em; /* Reduzco el tamaño de los títulos para dispositivos más pequeños */
-        margin-bottom: 5px; /* Reduzco más el margen inferior para dispositivos más pequeños */
     }
 }
 
 
 
 button {
-    padding: 10px 10px; /* Establece el espacio entre el texto y el borde del botón */
+    padding: 10px 30px; /* Establece el espacio entre el texto y el borde del botón */
     background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); /* Establece un fondo degradado en el botón */
     color: white; /* Establece el color del texto del botón */
     text-align: center; /* Centra el texto dentro del botón */
@@ -90,7 +89,6 @@ button {
     background-size: 150% auto; /* Establece el tamaño del fondo degradado del botón */
     border: none; /* Elimina el borde del botón */
     border-radius: 4px; /* Establece la curvatura de las esquinas del botón */
-    min-width: 100px; /* establece un minimo para que no se vean muy pequeños */
 }
 
 button:hover {
@@ -103,34 +101,22 @@ button:hover {
 
 
 
-
 header {
     background-color: #0a0a0a; /* Color de fondo del header */
-    padding: 10px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    header button {
-        font-size: 0.7em;
-    }
-}
-@media screen and (max-width: 767px) {
-    header button {
-        font-size: 0.7em;
-    }
-}
 
 
 nav {
     display: flex; /* Ajustado para centrar los elementos horizontalmente */
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 20px 50px;
 }
 
 
 .logo a img{
-    height: 85px;
+    max-height: 85px;
     transition: transform 0.3s;
 }
 
@@ -139,34 +125,33 @@ nav {
 }
 
 
-
-.navi_button {
-    width: 30%; /* Ajustado el ancho */
-    display: flex;
-    justify-content: center;
-}
-
 .menu{
-    font-size: 0.8em;
-    width: 100%; /* Ajustado el ancho */
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0;
 }
+
+
 
 .menu.active {
     display: flex;
 }
 
+
 .menu ul {
-    list-style: none;
     display:flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 0;
+    padding: 10px;
     background-color: #0a0a0a;
 }
 
-.menu li {
+.menu ul li:not(:first-child) {
+    padding-right: 10px;
+}
+
+.menu ul li {
     margin: 0 20px; /* Espacio entre elementos del menú */
     text-transform: uppercase;
     text-align: end;
@@ -207,35 +192,36 @@ nav {
 /* Ajustes para tablet y móvil */
 @media screen and (max-width: 991px) {
    
-    .navi_button {
+
+    .menu {
         display: none;
+        position: absolute;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        top: 100%; /* Posición debajo del header */
+        left: 0; /* Alineación a la izquierda */
+        background-color: #0a0a0a; /* Fondo del menú */
+
+    }
+
+    div.menu.active {
+        grid-template-rows: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu .active ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        background-color: #0a0a0a;
+        color: #f4f4f4;
+        position: absolute; /* Cambia la posición a absolute */
+        top: 100%; /* Coloca el ul justo debajo del menú */
     }
 
     .hamburger-menu {
         display: block;
-    }
-
-    .menu {
-        display: none;
-        position: relative;
-    }
-
-    .menu.active {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        background-color: #0a0a0a;
-        color: #f4f4f4;
-        display: none;
-        position: absolute; /* Cambia la posición a absolute */
-        top: 100%; /* Coloca el ul justo debajo del menú */
     }
 
 
@@ -252,22 +238,18 @@ nav {
 }
 
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
+
+
+
+
+
 
 /* Estilos para la seccion 1 */
 
 #section_uno {
     height: 70vh; /* Establece la altura al 70% de la altura visible del viewport para #container_uno */
-    background-image: url(/img/head51.jpg); /* Establece la imagen de fondo para #container_uno */
+    background-image: url(/img/principal.jpg); /* Establece la imagen de fondo para #container_uno */
     background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo en #container_uno */
     background-size: auto 100%; /* Ajusta el tamaño de la imagen de fondo según la preferencia en #container_uno */
     background-position: center left; /* Establece la posición de la imagen de fondo en #container_uno */
@@ -412,7 +394,7 @@ nav {
 
 /* Estilos para la seccion 4 */
 #section_cuatro {
-    padding: 100px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    padding: 100px 50px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     text-align: center;
 }
 
@@ -422,7 +404,6 @@ nav {
     flex-wrap: wrap; /* Añade flex-wrap: wrap para que las imágenes se envuelvan en dispositivos más pequeños */
     justify-content: center; /* Centra las imágenes horizontalmente */
     align-items: center;
-    padding: 50px 0; /* Establece un margen superior e inferior de 50px para .web-designs */
 }
 
 .portfolio a:nth-child(){
@@ -634,16 +615,6 @@ form input[type="submit"] {
 
 
 
-   /* padding: 10px 10px;  Establece el espacio entre el texto y el borde del botón */
-   /* background: linear-gradient(to right, #ff5fb7 0%, #8ad0d9 51%, #f0a213 80%); Establece un fondo degradado en el botón */
-   /* color: white;  Establece el color del texto del botón */
-   /* text-align: center;  Centra el texto dentro del botón */
-   /* text-transform: uppercase;  Convierte el texto a mayúsculas */
-   /* background-size: 150% auto;  Establece el tamaño del fondo degradado del botón */
-   /* border: none;  Elimina el borde del botón */
-   /* border-radius: 4px; Establece la curvatura de las esquinas del botón */
-
-
 
 form input[type="submit"]:hover {
     cursor: pointer; /* Cambia el cursor al pasar sobre los botones de tipo "button" en el formulario para indicar interactividad */
@@ -736,35 +707,17 @@ footer div p{
 
 
 /*TABLA DE RUPTURAS*/
-/* Estilos para dispositivos pequeños (móviles) en modo vertical
+/* Estilos para dispositivos pequeños (móviles)
 @media only screen and (max-width: 767px) {*/
     /* Tus estilos aquí
   }*/
   
-  /* Estilos para dispositivos pequeños (móviles) en modo horizontal
+  
+  /* Estilos para dispositivos medianos (tabletas)
   @media only screen and (min-width: 768px) and (max-width: 991px) {*/
     /* Tus estilos aquí
   }*/
   
-  /* Estilos para tabletas en modo vertical y horizontal
-  @media only screen and (min-width: 768px) and (max-width: 991px) {*/
-    /* Tus estilos aquí
-  }*/
-  
-  /* Estilos para dispositivos grandes (computadoras) en modo horizontal 
-  @media only screen and (min-width: 992px) and (orientation: landscape) {*/
-    /* Tus estilos aquí
-  }*/
-  
-  /* Estilos para dispositivos grandes (computadoras) en modo vertical 
-  @media only screen and (min-width: 992px) and (orientation: portrait) {*/
-    /* Tus estilos aquí
-  }*/
-  
-  /* Estilos generales para todos los dispositivos y tamaños
-  @media only screen and (min-width: 768px) {*/
-    /* Tus estilos aquí
-  }*/
   
   /* Estilos para dispositivos grandes (computadoras) en modo horizontal 
   @media only screen and (min-width: 1200px) {*/

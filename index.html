@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <title>ClinicWebs</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="img/clinicwebs.ico" type="image/x-icon">
+        <script defer src="js/functions.js"></script>
     </head>
     <body>
         <header>
@@ -12,24 +14,20 @@
                 <div class="logo">
                     <a href="#"><img src="img/logo.png" alt="logo"></a>
                 </div>
-                
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
                 <div class="menu">
                     <ul>
-                        <div class="navi_button">
-                            <a href="https://bceio1n0cqq.typeform.com/to/n0Gmymjc"><button>Comienza la transformación</button></a>
-                        </div>
+                        <li><button type="button">¡Digitalízate!</button><a href="https://bceio1n0cqq.typeform.com/to/n0Gmymjc"></a></li>
                         <li><a href="#">Home</a></li>
                         <li><a href="#container_tres">ClinicWebs</a></li>
                         <li><a href="#container_cinco">Marketing</a></li>
                         <li><a href="#container_cuatro">Portafolio</a></li>
                         <li><a href="#container_seis">Contacto</a></li>
                     </ul>
-                </div>
-                <!-- Agregamos el botón de hamburguesa -->
-                <div class="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
                 </div>
             </nav>
         </header>
@@ -40,7 +38,7 @@
                 <div>
                     <h3>no te quedes atrás</h3>
                     <h1>impulsa tu presencia en el sector sanitario</h1>
-                    <button>empieza aquí</button>
+                    <a href="https://bceio1n0cqq.typeform.com/to/n0Gmymjc"><button type="button">empieza aquí</button></a>
                 </div>
             </section>
         
@@ -57,7 +55,7 @@
                     <h3>potenciamos la presencia digital de tu clínica</h3>
                     <h2>una experiencia en línea única para tus pacientes</h2>
                     <p>Destaca en el ábito médico con nuestros diseños y desarrollo de páginas web personalizadas</p>
-                    <a href="https://bceio1n0cqq.typeform.com/to/n0Gmymjc"><button>¡Pide tu presupuesto!</button></a>
+                    <a href="https://bceio1n0cqq.typeform.com/to/n0Gmymjc"><button type="button">¡Pide tu presupuesto!</button></a>
                 </div>
             </section>
     
@@ -76,7 +74,7 @@
                     <h3>Hazte visible</h3>
                     <h2>Tu cliente va a encontrarte sin tener que buscarte</h2>
                     <p>Seguimos siempre una estrategia basada en performance, donde nuestro objetivo es mejorar tu imagen y tus resultados.</p>
-                    <a href="https://bceio1n0cqq.typeform.com/to/P3lAHdSQ"><button>Empieza tu campaña</button></a>
+                    <a href="https://bceio1n0cqq.typeform.com/to/P3lAHdSQ"><button type="button">Empieza tu campaña</button></a>
                 </div>
             </section>
 
@@ -130,10 +128,10 @@
                     <img src="img/iconos sociales/youtube.png" alt="youtube">
                     <img src="img/iconos sociales/twitter.png" alt="twitter">
                 </div>
-                <form action="">
+                <form action="" method="post" disabled>
                     <label for="search">Newsletter</label>
                     <div>
-                        <input type="email" placeholder="email@...">
+                        <input type="email" placeholder="email@..." required>
                         <input type="submit"  value="enviar" placeholder="email@...">
                     </div>
                     <p>suscribete a las últimas noticias-promociones</p>
@@ -143,16 +141,5 @@
                 <p id="copyright">&copy; 2024 ClinicWebs. Todos los derechos reservados.</p>
             </div>
         </footer>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var hamburgerMenu = document.querySelector(".hamburger-menu");
-                var menu = document.querySelector(".menu");
-        
-                hamburgerMenu.addEventListener("click", function () {
-                    menu.classList.toggle("active");
-                });
-            });
-        </script>
     </body>
 </html>
