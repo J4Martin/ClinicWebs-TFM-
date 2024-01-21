@@ -105,7 +105,20 @@ button:hover {
 
 header {
     background-color: #0a0a0a; /* Color de fondo del header */
+    padding: 10px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    header button {
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width: 767px) {
+    header button {
+        font-size: 0.7em;
+    }
+}
+
 
 nav {
     display: flex; /* Ajustado para centrar los elementos horizontalmente */
@@ -116,7 +129,7 @@ nav {
 .logo a img {
     height: 85px;
     transition: transform 0.3s; /* Agregamos una transición de transformación para el efecto de crecimiento al poner el cursor encima */
-    margin-right: 30px;
+    padding-right: 30px;
 }
 
 .logo a img:hover {
@@ -165,19 +178,44 @@ nav div:nth-child(3) {
     /* Puedes agregar otros estilos de hover si lo deseas, como cambiar el fondo, etc. */
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    header button {
-        font-size: 0.7em;
+
+
+
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+
+
+
+
+
+/* Ajustes para tablet y móvil */
+@media screen and (max-width: 1100px) {
+    .menu {
+        display: none; /* Ocultamos el menú por defecto en versiones móviles y tabletas */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburgermenu {
+        display: flex; /* Mostramos el botón de hamburguesa */
+        margin-left: auto; /* Mueve el botón de hamburguesa hacia la derecha */
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu_button {
+        width: 100%; /* Ajustado el ancho para centrar en dispositivos móviles y tabletas */
+        text-align: center; /* Centra el botón horizontalmente */
+        order: 2; /* Cambia el orden del botón de inicio */
     }
 }
-@media screen and (max-width: 767px) {
-    header button {
-        font-size: 0.7em;
-    }
-}
-
-
-
 
 
 /* Estilos para la seccion 1 */
@@ -298,7 +336,6 @@ nav div:nth-child(3) {
 @media screen and (min-width: 768px) and (max-width: 991px) {
     #section_tres {
         background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
-        z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
         padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     }
 
@@ -310,8 +347,7 @@ nav div:nth-child(3) {
 
 @media screen and (max-width: 767px) {
     #section_tres {
-        background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
-        z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
+        background-size: 150px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
         padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     }
 
@@ -668,50 +704,7 @@ footer div p{
     }
 }
 
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-@media screen and (max-width: 1400px) {
-    .menu {
-        font-size: 0.7em;
-    }
-}
 
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-@media screen and (max-width: 1400px) {
-    .menu {
-        font-size: 0.6em;
-    }
-}
-
-
-/* Ajustes para tablet y móvil */
-@media screen and (max-width: 1100px) {
-    .menu {
-        display: none; /* Ocultamos el menú por defecto en versiones móviles y tabletas */
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hamburger-menu {
-        display: flex; /* Mostramos el botón de hamburguesa */
-        margin-left: auto; /* Mueve el botón de hamburguesa hacia la derecha */
-    }
-
-    .menu ul {
-        list-style: none;
-        padding: 0;
-        text-align: center;
-    }
-
-    .menu li {
-        margin: 15px 0;
-    }
-
-    .menu_button {
-        width: 100%; /* Ajustado el ancho para centrar en dispositivos móviles y tabletas */
-        text-align: center; /* Centra el botón horizontalmente */
-        order: 2; /* Cambia el orden del botón de inicio */
-    }
-}
 
 
 
