@@ -9,6 +9,7 @@ body {
     background-color: #000000; /* Establece el color de fondo del cuerpo del documento */
 }
 
+
 h1, h2 {
     color: #FFFFFF; /* Establece el color del texto para los encabezados h1 y h2 */
     font-size: 3em; /* Establece el tamaño de fuente para los encabezados h1 y h2 */
@@ -123,18 +124,21 @@ header {
 nav {
     display: flex; /* Ajustado para centrar los elementos horizontalmente */
     align-items: center;
-    padding: 10px 30px; /* Ajustado el padding para mejorar la apariencia */
+    justify-content: space-between;
+    padding: 10px 30px;
 }
 
-.logo a img {
+
+.logo a img{
     height: 85px;
-    transition: transform 0.3s; /* Agregamos una transición de transformación para el efecto de crecimiento al poner el cursor encima */
-    padding-right: 30px;
+    transition: transform 0.3s;
 }
 
 .logo a img:hover {
     transform: scale(1.1); /* Hace que la imagen se agrande un 10% al hacer poner el cursor encima */
 }
+
+
 
 .navi_button {
     width: 30%; /* Ajustado el ancho */
@@ -142,33 +146,37 @@ nav {
     justify-content: center;
 }
 
-.menu {
+.menu{
     font-size: 0.8em;
     width: 100%; /* Ajustado el ancho */
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-
-nav div:nth-child(3) {
-    text-align: center; /* Centra el botón horizontalmente */
+.menu.active {
+    display: flex;
 }
 
 .menu ul {
     list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    background-color: #0a0a0a;
 }
 
 .menu li {
-    margin-left: 50px; /* Espacio entre elementos del menú */
+    margin: 0 20px; /* Espacio entre elementos del menú */
     text-transform: uppercase;
+    text-align: end;
 }
 
 
 .menu a {
     text-decoration: none;
-    color: white;
+    color: #f4f4f4;
+    font-size: 1em;
     font-weight: bold;
     transition: color 0.3s; /* Agregamos una transición de color al hacer hover */
 }
@@ -178,45 +186,82 @@ nav div:nth-child(3) {
     /* Puedes agregar otros estilos de hover si lo deseas, como cambiar el fondo, etc. */
 }
 
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background-color: #0a0a0a;; /* Agrega un fondo blanco al menú hamburguesa */
+    padding: 10px; /* Añade relleno al menú hamburguesa */
+    border-radius: 4px; /* Agrega bordes redondeados */
+}
 
-
-
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #f4f4f4; /* Color negro para las barras del menú hamburguesa */
+    margin: 6px 0;
+}
 
 
 
 
 /* Ajustes para tablet y móvil */
-@media screen and (max-width: 1100px) {
-    .menu {
-        display: none; /* Ocultamos el menú por defecto en versiones móviles y tabletas */
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 991px) {
+   
+    .navi_button {
+        display: none;
     }
 
-    .hamburgermenu {
-        display: flex; /* Mostramos el botón de hamburguesa */
-        margin-left: auto; /* Mueve el botón de hamburguesa hacia la derecha */
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: relative;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
     }
 
     .menu ul {
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 0;
-        text-align: center;
+        background-color: #0a0a0a;
+        color: #f4f4f4;
+        display: none;
+        position: absolute; /* Cambia la posición a absolute */
+        top: 100%; /* Coloca el ul justo debajo del menú */
     }
 
-    .menu li {
-        margin: 15px 0;
-    }
 
-    .menu_button {
-        width: 100%; /* Ajustado el ancho para centrar en dispositivos móviles y tabletas */
-        text-align: center; /* Centra el botón horizontalmente */
-        order: 2; /* Cambia el orden del botón de inicio */
+    @keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+}
 
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Estilos para la seccion 1 */
 
@@ -305,7 +350,13 @@ nav div:nth-child(3) {
 }
 
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #section_dos {
+        background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
+        padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    }
 
+}
 
 
 
@@ -322,7 +373,6 @@ nav div:nth-child(3) {
     display: flex; /* Establece el modelo de caja flexible para #container_tres */
     flex-direction: column; /* Establece la dirección del diseño como columna */
     justify-content: center; /* Centra verticalmente los elementos dentro de #container_tres */
-    z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
     padding: 150px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
 }
 
@@ -336,7 +386,7 @@ nav div:nth-child(3) {
 @media screen and (min-width: 768px) and (max-width: 991px) {
     #section_tres {
         background-size: 300px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
-        padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+        padding: 50px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     }
 
     #section_tres div {
@@ -348,7 +398,7 @@ nav div:nth-child(3) {
 @media screen and (max-width: 767px) {
     #section_tres {
         background-size: 150px;  /* Ajusta el tamaño de la imagen de fondo, con un ancho automático y un 70% de la altura */
-        padding: 100px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+        padding: 50px 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     }
 
     #section_tres div {
@@ -362,8 +412,7 @@ nav div:nth-child(3) {
 
 /* Estilos para la seccion 4 */
 #section_cuatro {
-    z-index: 3; /* Establece el índice Z para controlar la superposición de elementos */
-    padding: 20px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
+    padding: 100px; /* Agrega un relleno de 150px en la parte inferior, en la superior y en los lados */
     text-align: center;
 }
 
@@ -373,11 +422,10 @@ nav div:nth-child(3) {
     flex-wrap: wrap; /* Añade flex-wrap: wrap para que las imágenes se envuelvan en dispositivos más pequeños */
     justify-content: center; /* Centra las imágenes horizontalmente */
     align-items: center;
-    padding: 100px 0; /* Establece un margen superior e inferior de 50px para .web-designs */
+    padding: 50px 0; /* Establece un margen superior e inferior de 50px para .web-designs */
 }
 
 .portfolio a:nth-child(){
-    padding: 10px;
     width: 100%;
 }
 
@@ -424,7 +472,6 @@ nav div:nth-child(3) {
 @media screen and (min-width: 768px) and (max-width: 991px) {
     #section_cinco {
         background-size: 300px;
-        padding: 100px 20px; /* Ajusta el padding para dispositivos más pequeños */
     }
 
     #section_cinco div {
@@ -501,6 +548,38 @@ nav div:nth-child(3) {
 
 
 
+@media screen and (min-width: 768px), (max-width: 991px) {
+    #section_siete {
+        flex-direction: column; /* Cambia la dirección del diseño a columna en dispositivos con ancho de pantalla menor a 767px o 1024px */
+        align-items: center; /* Centra verticalmente los elementos dentro del contenedor en dispositivos móviles y tabletas */
+        padding: 100px 20px; /* Agrega un relleno de 20px alrededor del contenido del contenedor en dispositivos móviles y tabletas */
+    }
+
+    .mail{
+        display: flex; /* Establece .mail como un elemento flexible en dispositivos móviles y tabletas */
+        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
+        align-items: center; /* Centra horizontalmente los elementos dentro de .mail en dispositivos móviles y tabletas */
+    }
+
+    .mail img {
+        margin: 0; /* Elimina el margen derecho para el icono de mail en dispositivos móviles y tabletas */
+        margin-bottom: 10px; /* Establece un espaciado inferior de 10px entre el icono de mail y el texto en dispositivos móviles y tabletas */
+    }
+
+    .telephone{
+        display: flex; /* Establece .telephone como un elemento flexible en dispositivos móviles y tabletas */
+        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
+        align-items: center; /* Centra horizontalmente los elementos dentro de .telephone en dispositivos móviles y tabletas */
+    }
+
+    .telephone img {
+        margin-top: 10px; /* Establece un margen superior de 10px para las imágenes dentro de .telephone en dispositivos móviles y tabletas */
+    }
+
+    .icon_dos{
+        display: flex; /* Establece .icon_dos como un elemento flexible en dispositivos móviles y tabletas */
+    }
+}
 
 
 
@@ -571,13 +650,17 @@ form input[type="submit"]:hover {
 }
 
 
+/* Media queries para ajustar estilos en dispositivos más pequeños */
+@media screen and (max-width: 1300px) {
+    form input[type="button"] {
+        font-size: 0.68em;
+    }
+}
 
 
 
 
 /* Estilos para el pie de página */
-
-
 
 footer div:first-child{
     display: flex; /* Establece el modelo de caja flexible para el pie de página */
@@ -690,75 +773,3 @@ footer div p{
 }*/
 
 
-
-
-
-
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-
-
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-@media screen and (max-width: 1300px) {
-    form input[type="button"] {
-        font-size: 0.68em;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 768px), (max-width: 991px) {
-    #section_siete {
-        flex-direction: column; /* Cambia la dirección del diseño a columna en dispositivos con ancho de pantalla menor a 767px o 1024px */
-        align-items: center; /* Centra verticalmente los elementos dentro del contenedor en dispositivos móviles y tabletas */
-        padding: 100px 20px; /* Agrega un relleno de 20px alrededor del contenido del contenedor en dispositivos móviles y tabletas */
-    }
-
-    .mail{
-        display: flex; /* Establece .mail como un elemento flexible en dispositivos móviles y tabletas */
-        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
-        align-items: center; /* Centra horizontalmente los elementos dentro de .mail en dispositivos móviles y tabletas */
-    }
-
-    .mail img {
-        margin: 0; /* Elimina el margen derecho para el icono de mail en dispositivos móviles y tabletas */
-        margin-bottom: 10px; /* Establece un espaciado inferior de 10px entre el icono de mail y el texto en dispositivos móviles y tabletas */
-    }
-
-    .telephone{
-        display: flex; /* Establece .telephone como un elemento flexible en dispositivos móviles y tabletas */
-        flex-direction: column; /* Establece la dirección del diseño como columna en dispositivos móviles y tabletas */
-        align-items: center; /* Centra horizontalmente los elementos dentro de .telephone en dispositivos móviles y tabletas */
-    }
-
-    .telephone img {
-        margin-top: 10px; /* Establece un margen superior de 10px para las imágenes dentro de .telephone en dispositivos móviles y tabletas */
-    }
-
-    .icon_dos{
-        display: flex; /* Establece .icon_dos como un elemento flexible en dispositivos móviles y tabletas */
-    }
-}
-
-
-/* Media queries para ajustar estilos en dispositivos más pequeños */
-@media screen and (max-width: 767px) {
-    #section_ocho {
-        padding: 0 0 20px 0; /* Reduzco más el relleno inferior para dispositivos más pequeños */
-    }
-
-    #section_ocho img {
-        margin-bottom: 10px; /* Reduzco más el margen inferior para dispositivos más pequeños */
-    }
-
-}
